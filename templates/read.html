@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block members %}
+    <h3>All Members:</h3>
+    <p>
+    {% for member in members %}
+        Name: {{ member.name }} <br>
+        Email: {{ member.email }} <br>
+        {% if member.active == True %}
+        <!--The following line provides a text color based on if the member is active or not-->
+        Status: <span style="color: green">Active</span>
+        {% else %}
+        Status: <span style="color: red">Inactive</span>
+        {% endif %}
+        <br>
+     
+    {% endfor %}
+    </p>
+{% endblock members %}

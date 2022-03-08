@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Members List</title>
+    </head>
+    <body style="text-align: center">
+        <h1>CarClub App</h1>
+        <span><a href="{{ url_for('create') }}">Create</a></span>
+        <span><a href="{{ url_for('read') }}">Read</a></span>
+        {% block members %}{% endblock members %}
+    </body>
+</html>
