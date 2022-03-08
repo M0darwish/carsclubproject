@@ -1,0 +1,6 @@
+.vscode-server/
+.cache/
+.docker/
+.ssh/
+venv
+__pycache__
