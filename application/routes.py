@@ -1,7 +1,7 @@
-
+from turtle import position
 from application import app, db
 from application.models import Members, Cars
-from application.forms import CreateForm 
+from application.forms import CreateForm, CreateCarForm
 
 from flask import render_template, redirect, url_for, request
 
@@ -17,15 +17,15 @@ def create():
     return render_template('create.html', form=createform)
 
 @app.route('/create_car', methods=['GET', 'POST'])
-def create():
-    createform = CreateForm()
+def createcar():
+    createcarform = CreateCarForm()
 
-    if createform.validate_on_submit():
-        car = Cars (plate=createform.plate.data, make=createform.make.data)
+    if createcarform.validate_on_submit():
+        car = Cars (plate=createcarform.plate.data, make=createcarform.make.data)
         db.session.add(car)
         db.session.commit()
         return redirect(url_for('read'))
-    return render_template('create_car.html', form=createform)
+    return render_template('create_car.html', form=createcarform)
 
 @app.route('/', methods=['GET'])
 @app.route('/read', methods=['GET'])
