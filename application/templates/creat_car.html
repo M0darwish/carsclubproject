@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block members %}
+<h3>Create a saff account:</h3>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+        {{ form.plate.label }}
+        {{ form.plate }}
+        {% if form.plate.errors %}
+        <div class='error'>
+            {% for error in form.plate.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.make.label }}
+        {{ form.make }}
+        {% if form.make.errors %}
+        <div class='error'>
+            {% for error in form.make.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock members %}
