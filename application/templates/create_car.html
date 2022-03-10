@@ -1,9 +1,20 @@
 {% extends 'main.html' %}
 {% block members %}
-<h3>Create a saff account:</h3>
+<h3>Create a car profile:</h3>
 <div class='form'>
     <form method='POST' action=''>
         {{ form.hidden_tag() }}
+        {{ form.car_owner.label }}
+        {{ form.car_owner }}
+        {% if form.car_owner.errors %}
+        <div class='error'>
+            {% for error in form.car_owner.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        <br>
         {{ form.plate.label }}
         {{ form.plate }}
         {% if form.plate.errors %}
@@ -27,4 +38,5 @@
         {{ form.submit }}
     </form>
 </div>
+<font size="1" style="color: red">*Make sure the member is added before you create their car profile</font>
 {% endblock members %}

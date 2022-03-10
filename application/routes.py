@@ -19,6 +19,9 @@ def create():
 @app.route('/create_car', methods=['GET', 'POST'])
 def createcar():
     createcarform = CreateCarForm()
+    members = Members.query.all()
+    for member in members:
+        createcarform.car_owner.choices.append((member.id, f"{member.name}"))
 
     if createcarform.validate_on_submit():
         car = Cars (plate=createcarform.plate.data, make=createcarform.make.data)

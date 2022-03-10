@@ -11,5 +11,5 @@ class Members(db.Model):
 class Cars(db.Model):
     plate = db.Column(db.String(10), primary_key=True)
     make = db.Column(db.String(30), nullable=False)
-    Member_id = db.Column(db.String(30), ForeignKey('members.id'), nullable=False)
+    Member_id = db.Column(db.String(30), ForeignKey('members.id'))
     
