@@ -12,6 +12,8 @@ services:
       DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@carclub_database:3306/carclub
       #CREATE_SCHEMA:
       SECRET_KEY: ${SECRET_KEY}
+    depends_on:
+    - database
   database:
     container_name: carclub_database
     image: mysql:5.7
@@ -21,3 +23,10 @@ services:
     ports:
     - target: 3306
       published: 3306
+    volumes:
+    - type: volume
+      source: carclub_database_volume
+      target: /var/lib/mysql
+
+volumes:
+  carclub_database_volume:
