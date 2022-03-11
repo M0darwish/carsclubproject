@@ -27,9 +27,7 @@ services:
     - type: volume
       source: carclub_database_volume
       target: /var/lib/mysql
-
-
-
+      
   nginx:
     image: nginx:latest
     ports:
