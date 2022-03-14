@@ -21,3 +21,10 @@ def create():
 def read():
     members = Members.query.all()
     return render_template('read.html', members=members)
+
+@app.route('/delete/<name>', methods=['GET', 'POST'])
+def delete(name):
+    member = Members.query.filter_by(name=name).first()
+    db.session.delete(member)
+    db.session.commit()
+    return redirect(url_for('read'))
