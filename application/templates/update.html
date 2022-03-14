@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% block members %}
+<h3>Update a Member info:</h3>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name }}
+        {% if form.name.errors %}
+        <div class='error'>
+            {% for error in form.name.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.email.label }}
+        {{ form.email }}
+        {% if form.email.errors %}
+        <div class='error'>
+            {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.active.label }}
+        {{ form.active }}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock members %}
