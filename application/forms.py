@@ -4,5 +4,11 @@ from wtforms.validators import DataRequired, Length, ValidationError
 
 class CreateForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(min=2,max=30)])
-    email = StringField('Email', validators=[DataRequired(), Length(min=2,max=30)])
+    email = StringField('Email', validators=[DataRequired(), Length(min=5,max=30)])
     submit = SubmitField('Register')
+
+class UpdateForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired(), Length(min=2,max=30)])
+    email = StringField('Email', validators=[DataRequired(), Length(min=5,max=30)])
+    active = BooleanField('Active')
+    submit = SubmitField('Update')
