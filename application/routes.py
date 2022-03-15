@@ -1,4 +1,3 @@
-
 from application import app, db
 from application.models import Members
 from application.forms import CreateForm, UpdateForm

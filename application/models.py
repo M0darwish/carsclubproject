@@ -5,3 +5,4 @@ class Members(db.Model):
     name = db.Column(db.String(30), nullable=False)
     email = db.Column(db.String(30), nullable=False)
     active = db.Column(db.Boolean, default=False)
+    

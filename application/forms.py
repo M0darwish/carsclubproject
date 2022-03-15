@@ -12,3 +12,4 @@ class UpdateForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Length(min=5,max=30)])
     active = BooleanField('Active')
     submit = SubmitField('Update')
+    
