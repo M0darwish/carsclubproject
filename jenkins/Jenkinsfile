@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    enviroment {
+        // This is created when DockerHub login credentials was added with ID= DOCKER_HUB_CREDS to the UI Jenkins server… 
+        // DOCKER_HUB_CRID (=username:password), which generates DOCKER_HUB_CRID_PSW(=password) & DOCKER_HUB_CRID_USR(=username) ->to be used in setup stage
+        $DOCKER_HUB_CREDS = credentials("DOCKER_HUB_CREDS")
+    }
     stages {
         stage('Setup') {
             steps {
