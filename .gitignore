@@ -2,6 +2,8 @@
 .cache/
 .docker/
 .ssh/
-venv
+venv/
 __pycache__/
 *.db
+.coverage
+application/__pycache__/
