@@ -36,8 +36,7 @@ class TestCRUD(TestBase):
         self.assertIn('newmember@test.app', str(response.data))
     
     def test_create_members(self):
-        response = self.client.post(
-            url_for('create'),
+        response = self.client.post(url_for('create'),
             data=dict(name="created member", email="createmember@test.app"),
             follow_redirects=True
         )
