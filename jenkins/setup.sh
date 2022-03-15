@@ -9,6 +9,8 @@ echo "Setup stage"
 # #install docker
 # curl https://get.docker.com | sudo bash
 
+# #adds jenkins to docker group:
+sudo usermod -aG docker jenkins
 #install docker-compose
 # set which version to download (latest)
 # version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
