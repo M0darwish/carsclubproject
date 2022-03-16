@@ -1,22 +1,25 @@
 version: "3.8"
 services:
   carclubapp:
-    container_name: carclubapp
+    container_name: carclubapp #for docker-compose local testing, will get ignored by Stack during Build stage
     image: modarwish/carclubapp:latest
-    build: .
+    build: . #Used in Build stage, will get ignored by Stack during Build stage
+    deploy:
+      replicas: 3
     ports:
     - published: 5000
       target: 5000
-      # protocol: tcp
     environment:
       DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@carclub_database:3306/carclub
-      #CREATE_SCHEMA:
       SECRET_KEY: ${SECRET_KEY}
     depends_on:
     - database
+
   database:
-    container_name: carclub_database
+    container_name: carclub_database #For docker-compose, will get ignored by Stack during Build stage
     image: mysql:5.7
+    deploy:
+      replicas: 3
     environment:
       MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: carclub
@@ -29,15 +32,15 @@ services:
       target: /var/lib/mysql
       
   nginx:
-    image: nginx:latest
+    image: modarwish/nginx:test
+    build: ./nginx #Used in Build stage, Will get ignored by Stack during Build stage
+    deploy:
+      replicas: 3
     ports:
     - target: 80
       published: 80
       protocol: tcp
-    volumes:
-    - type: bind
-      source: nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
+
 
 volumes:
   carclub_database_volume:
