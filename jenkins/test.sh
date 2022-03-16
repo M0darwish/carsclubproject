@@ -9,6 +9,9 @@ source venv/bin/activate
 #Install pip requirements
 pip3 install -r requirements.txt
 
+#export env variables 
+export SECRET_KEY=$SECRET_KEY
+
 # Run pytest
 python3 -m pytest --cov=application --cov-report term-missing
 
