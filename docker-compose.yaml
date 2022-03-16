@@ -4,6 +4,8 @@ services:
     container_name: carclubapp
     image: modarwish/carclubapp:latest
     build: .
+    deploy:
+      replicas: 3
     ports:
     - published: 5000
       target: 5000
@@ -14,9 +16,12 @@ services:
       SECRET_KEY: ${SECRET_KEY}
     depends_on:
     - database
+
   database:
     container_name: carclub_database
     image: mysql:5.7
+    deploy:
+      replicas: 3
     environment:
       MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: carclub
@@ -31,6 +36,8 @@ services:
   nginx:
     image: modarwish/nginx:test
     build: ./nginx
+    deploy:
+      replicas: 3
     ports:
     - target: 80
       published: 80
