@@ -14,18 +14,19 @@ pipeline {
                sh "bash jenkins/setup.sh"
             }
         }
-        stage('Build') {
-            steps {
-                sh "bash jenkins/build.sh"
-            }
-        }
 
         stage('Test') {
             steps {
                 sh "bash jenkins/test.sh"
             }
         }
-        
+
+        stage('Build') {
+            steps {
+                sh "bash jenkins/build.sh"
+            }
+        }
+
         stage('Push') {
             steps {
                 sh "bash jenkins/push.sh"
