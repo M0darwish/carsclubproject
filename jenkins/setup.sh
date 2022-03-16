@@ -14,8 +14,8 @@ curl https://get.docker.com | sudo bash
 sudo usermod -aG docker jenkins
 fi
 
-#install docker-compose
-
+#install docker-compose if not exist
+if [ ! -f "/usr/local/bin/docker-compose"]; then
 #set which version to download (latest)
 version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
 # download to /usr/local/bin/docker-compose
