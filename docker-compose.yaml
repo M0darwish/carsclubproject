@@ -1,7 +1,6 @@
 version: "3.8"
 services:
   carclubapp:
-    container_name: carclubapp
     image: modarwish/carclubapp:latest
     build: .
     ports:
@@ -9,13 +8,10 @@ services:
       target: 5000
       protocol: tcp
     environment:
-      DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@carclubapp_database:3306/carclub 
-      #CREATE_SCHEMA:
+      DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@carclubapp_database:3306/carclub
       SECRET_KEY: ${SECRET_KEY}
-    depends_on:
-    - database
+
   database:
-    container_name: carclubapp_database
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD:
