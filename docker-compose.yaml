@@ -1,9 +1,9 @@
 version: "3.8"
 services:
   carclubapp:
-    # container_name: carclubapp
+    container_name: carclubapp
     image: modarwish/carclubapp:latest
-    # build: .
+    build: .
     ports:
     - published: 5000
       target: 5000
@@ -12,10 +12,10 @@ services:
       DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@carclubapp_database:3306/carclub 
       #CREATE_SCHEMA:
       SECRET_KEY: ${SECRET_KEY}
-    # depends_on:
-    # - database
+    depends_on:
+    - database
   database:
-    # container_name: carclubapp_database
+    container_name: carclubapp_database
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD:
@@ -29,7 +29,7 @@ services:
       target: /var/lib/mysql
       
   nginx:
-    image: modarwish/nginx:latest
+    image: nginx
     ports:
     - target: 80
       published: 80
