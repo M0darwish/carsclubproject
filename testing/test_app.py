@@ -8,7 +8,7 @@ class TestBase(TestCase):
     def create_app(self):
         # Defines the flask object's configuration for the unit tests
         app.config.update(
-            DATABASE_URI='sqlite:///',
+            DATABASE_URI='sqlite:///data.db',
             DEBUG=True,
             WTF_CSRF_ENABLED=False
         )
