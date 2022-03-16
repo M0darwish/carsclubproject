@@ -5,7 +5,7 @@ services:
     image: modarwish/carclubapp:latest
     build: . #Used in Build stage, will get ignored by Stack during Build stage
     deploy:
-      replicas: 3
+      replicas: 1
     ports:
     - published: 5000
       target: 5000
@@ -19,7 +19,7 @@ services:
     container_name: carclub_database #For docker-compose, will get ignored by Stack during Build stage
     image: mysql:5.7
     deploy:
-      replicas: 3
+      replicas: 1
     environment:
       MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: carclub
@@ -35,7 +35,7 @@ services:
     image: modarwish/nginx:test
     build: ./nginx #Used in Build stage, Will get ignored by Stack during Build stage
     deploy:
-      replicas: 3
+      replicas: 1
     ports:
     - target: 80
       published: 80
