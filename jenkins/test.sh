@@ -19,4 +19,3 @@ python3 -m pytest --cov=application --cov-report term-missing
 #Remove venv
 deactivate
 rm -rf venv
-unset DATABASE_URI
