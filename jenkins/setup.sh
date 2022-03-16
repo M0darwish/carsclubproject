@@ -6,13 +6,16 @@ echo "Setup stage"
 sudo apt-get update
 sudo apt-get install -y curl jq
 
-# #install docker
+# #install docker if not exist
+if [ ! -f "/usr/bin/docker"]; then
 curl https://get.docker.com | sudo bash
 
 # #adds jenkins to docker group:
 sudo usermod -aG docker jenkins
+fi
 
 #install docker-compose
+
 #set which version to download (latest)
 version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
 # download to /usr/local/bin/docker-compose
