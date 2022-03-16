@@ -12,6 +12,9 @@ pip3 install -r requirements.txt
 #export env variables 
 export SECRET_KEY=$SECRET_KEY
 
+#run create.py
+python3 create.py
+
 # Run pytest
 python3 -m pytest --cov=application --cov-report term-missing
 
