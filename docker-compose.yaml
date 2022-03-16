@@ -2,7 +2,6 @@ version: "3.8"
 services:
   carclubapp:
     image: modarwish/carclubapp:latest
-    build: .
     ports:
     - published: 5000
       target: 5000
