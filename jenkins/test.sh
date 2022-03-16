@@ -10,7 +10,7 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 
 # Run pytest
-python3 -m pytest --cov=application
+python3 -m pytest --cov=application --cov-report term-missing
 
 #Remove venv
 deactivate
