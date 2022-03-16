@@ -13,8 +13,8 @@ pip3 install -r requirements.txt
 export SECRET_KEY=$SECRET_KEY
 export DATABASE_URI=$TESTING_DATABSE_URI
 
-#run create.py
-python3 create.py
+# #run create.py
+# python3 create.py
 
 # Run pytest
 python3 -m pytest --cov=application --cov-report term-missing
