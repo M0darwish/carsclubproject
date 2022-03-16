@@ -6,6 +6,7 @@ pipeline {
         DOCKER_HUB_CREDS = credentials("DOCKER_HUB_CREDS")
         MYSQL_ROOT_PASSWORD = credentials("MYSQL_ROOT_PASSWORD")
         SECRET_KEY = credentials("SECRET_KEY")
+        TESTING_DATABSE_URI = credentials("TESTING_DATABSE_URI")
     }
     stages {
         stage('Setup') {

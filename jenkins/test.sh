@@ -11,7 +11,7 @@ pip3 install -r requirements.txt
 
 #export env variables 
 export SECRET_KEY=$SECRET_KEY
-export DATABASE_URI=sqlite:///data.db
+export DATABASE_URI=$TESTING_DATABSE_URI
 
 #run create.py
 python3 create.py
