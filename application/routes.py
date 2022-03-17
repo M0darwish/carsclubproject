@@ -31,8 +31,9 @@ def createcar():
 @app.route('/', methods=['GET'])
 @app.route('/read', methods=['GET'])
 def read():
-    members = Members.query.all()
-    return render_template('read.html', members=members)
+    member = Members.query.all()
+    car = Cars.query.all()
+    return render_template('read.html', members=member, cars=car)
 
 @app.route('/delete/<name>', methods=['GET', 'POST'])
 def delete(name):
