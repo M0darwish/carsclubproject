@@ -77,7 +77,7 @@ def update_car(plate):
     for member in members:
         updatecarform.car_owner.choices.append((member.id, f"{member.name}"))
 
-    # Prepopulate the form boxes with current values when they open the page.
+    # Prepopulate the form boxes with current values when they open the page (except members drop down list)
     if request.method == 'GET':
         updatecarform.plate.data = car.plate
         updatecarform.make.data = car.make
