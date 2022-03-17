@@ -12,8 +12,11 @@
         Status: <span style="color: red">Inactive</span>
         {% endif %}
         <br>
+        <span><a href="{{ url_for('update', name=member.name) }}">Update</a></span>
+        <span><a href="{{ url_for('delete', name=member.name) }}">Delete</a></span> 
         <br>
         <br>
     {% endfor %}
     </p>
 {% endblock members %}
+

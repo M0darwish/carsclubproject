@@ -1,0 +1,9 @@
+*.db
+__pycache__/
+.gitignore
+venv/
+.vscode-server/
+.cache/
+.docker/
+.ssh/
+environment

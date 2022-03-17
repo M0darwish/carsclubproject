@@ -1,8 +1,8 @@
+
 from turtle import position
 from application import app, db
 from application.models import Members, Cars
 from application.forms import CreateForm, CreateCarForm
-
 from flask import render_template, redirect, url_for, request
 
 @app.route('/create', methods=['GET', 'POST'])
@@ -35,3 +35,30 @@ def createcar():
 def read():
     members = Members.query.all()
     return render_template('read.html', members=members)
+
+@app.route('/delete/<name>', methods=['GET', 'POST'])
+def delete(name):
+    member = Members.query.filter_by(name=name).first()
+    db.session.delete(member)
+    db.session.commit()
+    return redirect(url_for('read'))
+
+@app.route('/update/<name>', methods=['GET', 'POST'])
+def update(name):
+    updateform = UpdateForm()
+    member = Members.query.filter_by(name=name).first()
+    
+    # Prepopulate the form boxes with current values when they open the page.
+    if request.method == 'GET':
+        updateform.name.data = member.name
+        updateform.email.data = member.email
+        return render_template('update.html', form=updateform)
+    
+    # Update the item in the databse when they submit
+    else:
+        if updateform.validate_on_submit():
+            member.name = updateform.name.data
+            member.email = updateform.email.data
+            member.active = updateform.active.data
+            db.session.commit()
+            return redirect(url_for('read'))
