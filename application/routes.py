@@ -42,6 +42,13 @@ def delete(name):
     db.session.commit()
     return redirect(url_for('read'))
 
+@app.route('/delete_car/<name>', methods=['GET', 'POST'])
+def delete_car(name):
+    car = Cars.query.filter_by(name=name).first()
+    db.session.delete(car)
+    db.session.commit()
+    return redirect(url_for('read'))
+
 @app.route('/update/<name>', methods=['GET', 'POST'])
 def update(name):
     updateform = UpdateForm()
