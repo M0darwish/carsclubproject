@@ -1,8 +1,7 @@
-
 from turtle import position
 from application import app, db
 from application.models import Members, Cars
-from application.forms import CreateForm, CreateCarForm
+from application.forms import CreateForm, UpdateForm, CreateCarForm
 from flask import render_template, redirect, url_for, request
 
 @app.route('/create', methods=['GET', 'POST'])
