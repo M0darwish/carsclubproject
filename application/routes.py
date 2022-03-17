@@ -42,9 +42,9 @@ def delete(name):
     db.session.commit()
     return redirect(url_for('read'))
 
-@app.route('/delete_car/<name>', methods=['GET', 'POST'])
-def delete_car(name):
-    car = Cars.query.filter_by(name=name).first()
+@app.route('/delete_car/<plate>', methods=['GET', 'POST'])
+def delete_car(plate):
+    car = Cars.query.filter_by(plate=plate).first()
     db.session.delete(car)
     db.session.commit()
     return redirect(url_for('read'))
