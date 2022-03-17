@@ -1,6 +1,6 @@
 from application import app, db
 from application.models import Members, Cars
-from application.forms import CreateForm, UpdateForm, CreateCarForm
+from application.forms import CreateForm, UpdateForm, CreateCarForm, UpdateCarForm
 from flask import render_template, redirect, url_for, request
 
 @app.route('/create', methods=['GET', 'POST'])
@@ -68,3 +68,26 @@ def update(name):
             member.active = updateform.active.data
             db.session.commit()
             return redirect(url_for('read'))
+
+@app.route('/update_car/<plate>', methods=['GET', 'POST'])
+def update_car(plate):
+    updatecarform = UpdateCarForm()
+    car = Cars.query.filter_by(plate=plate).first()
+
+    # Prepopulate the form boxes with current values when they open the page.
+    if request.method == 'GET':
+        updatecarform.plate.data = car.plate
+        updatecarform.make.data = car.make
+        createcarform.car_owner.data= car.member_id
+        return render_template('update_car.html', form=updatecarform)
+    
+    # Update the item in the databse when they submit
+    else:
+        if updatecarform.validate_on_submit():
+            car.plate = updatecarform.plate.data
+            car.make = updatecarform.make.data
+            car.active = updatecarform.active.data
+            car.member_id=createcarform.car_owner.data
+            db.session.commit()
+            return redirect(url_for('read'))
+
