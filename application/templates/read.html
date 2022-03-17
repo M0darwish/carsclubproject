@@ -3,8 +3,7 @@
     <h3>All Members:</h3>
     <p>
     {% for member in members %}
-        Name: {{ member.name }} <br>
-        Email: {{ member.email }} <br>
+        Member Name: {{ member.name }}   Email: {{ member.email }}
         {% if member.active == True %}
         <!--The following line provides a text color based on if the member is active or not-->
         Status: <span style="color: green">Active</span>
@@ -15,8 +14,27 @@
         <span><a href="{{ url_for('update', name=member.name) }}">Update</a></span>
         <span><a href="{{ url_for('delete', name=member.name) }}">Delete</a></span> 
         <br>
+        {{ member.name }} has the following cars:<br>
+        {% for car in cars %}
+            {% if car.member.name == member.name %}
+                Car Plate No: {{ car.plate }} Make: {{ car.make }}
+                <br>
+            {% endif %}
+        {% endfor %}
+         <br>
         <br>
     {% endfor %}
+    <br>
+    <br>
+    <h3>All Cars:</h3>
+    <p>
+    {% for car in cars %}
+        Car Plate No: {{ car.plate }} Make: {{ car.make }} 
+     Car Owner: {{ car.member.name }}
+        <br>
+        <br>
+    {% endfor %}
+
     </p>
 {% endblock members %}
 
