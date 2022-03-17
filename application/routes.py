@@ -1,4 +1,3 @@
-from turtle import position
 from application import app, db
 from application.models import Members, Cars
 from application.forms import CreateForm, UpdateForm, CreateCarForm
