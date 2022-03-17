@@ -15,7 +15,7 @@ def create():
     return render_template('create.html', form=createform)
 
 @app.route('/create_car', methods=['GET', 'POST'])
-def createcar():
+def create_car():
     createcarform = CreateCarForm()
     members = Members.query.all()
     for member in members:
