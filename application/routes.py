@@ -22,7 +22,7 @@ def createcar():
         createcarform.car_owner.choices.append((member.id, f"{member.name}"))
 
     if createcarform.validate_on_submit():
-        car = Cars (plate=createcarform.plate.data, make=createcarform.make.data)
+        car = Cars (plate=createcarform.plate.data, make=createcarform.make.data, member_id=createcarform.car_owner.data)
         db.session.add(car)
         db.session.commit()
         return redirect(url_for('read'))
