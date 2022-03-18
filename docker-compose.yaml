@@ -5,7 +5,7 @@ services:
     image: modarwish/carclubapp:latest
     build: . #Used in Build stage, will get ignored by Stack during Build stage
     deploy:
-      replicas: 1
+      replicas: 3
     ports:
     - published: 5000
       target: 5000
