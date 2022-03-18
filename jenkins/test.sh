@@ -14,7 +14,9 @@ export SECRET_KEY=$SECRET_KEY
 export DATABASE_URI=$TESTING_DATABSE_URI
 
 # Run pytest
-python3 -m pytest --cov=application --cov-report term-missing
+python3 -m pytest --cov=application --cov-report term-missing \
+    --cov-report xml:coverage.xml \
+	--junitxml=junit_report.xml
 
 #Remove venv
 deactivate
