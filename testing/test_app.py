@@ -1,7 +1,7 @@
 from flask import url_for
 from flask_testing import TestCase
 from application import app, db
-from application.models import Members
+from application.models import Members, Cars
 
 class TestBase(TestCase):
 
@@ -19,15 +19,19 @@ class TestBase(TestCase):
         db.create_all()
 
         member1 = Members(name="new member", email= "newmember@test.app")
-
         db.session.add(member1)
         db.session.commit()
+
+        car1 = Cars(plate="GB123", make= "Tesla X") #member_id
+        db.session.add(car1)
+        db.session.commit()
+
 
     def tearDown(self):
         # Will be called after every test
         db.drop_all()
 
-class TestCRUD(TestBase):
+class TestMembersCRUD(TestBase):
 
     def test_read_members(self):
         response = self.client.get(url_for('read'))
@@ -60,3 +64,13 @@ class TestCRUD(TestBase):
             follow_redirects=True
         )
         self.assertNotIn("new member", str(response.data))
+
+class TestcarsCRUD(TestBase):
+
+    def test_read_cars(self):
+        response = self.client.get(url_for('read'))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('GB123', str(response.data))
+        self.assertIn('Tesla X', str(response.data))
+    
+  
