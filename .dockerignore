@@ -6,4 +6,4 @@ venv/
 .cache/
 .docker/
 .ssh/
-enviroment
+environment

@@ -5,8 +5,10 @@
     </head>
     <body style="text-align: center">
         <h1>CarClub App</h1>
-        <span><a href="{{ url_for('create') }}">Create</a></span>
-        <span><a href="{{ url_for('read') }}">Read</a></span>
+        <span><a href="{{ url_for('create') }}">Create a member profile</a></span>
+        <span><a href="{{ url_for('create_car') }}">Create a car profile</a></span><br>
+        <span><a href="{{ url_for('read') }}">View Members & Cars</a></span>
         {% block members %}{% endblock members %}
     </body>
 </html>
+
