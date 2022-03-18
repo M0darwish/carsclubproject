@@ -22,7 +22,7 @@ class TestBase(TestCase):
         db.session.add(member1)
         db.session.commit()
 
-        car1 = Cars(plate="GB123", make= "Tesla X") #member_id
+        car1 = Cars(plate="new123", make= "new make") #member_id
         db.session.add(car1)
         db.session.commit()
 
@@ -65,12 +65,20 @@ class TestMembersCRUD(TestBase):
         )
         self.assertNotIn("new member", str(response.data))
 
-class TestcarsCRUD(TestBase):
+class TestCarsCRUD(TestBase):
 
     def test_read_cars(self):
         response = self.client.get(url_for('read'))
         self.assertEqual(response.status_code, 200)
-        self.assertIn('GB123', str(response.data))
-        self.assertIn('Tesla X', str(response.data))
+        self.assertIn('new123', str(response.data))
+        self.assertIn('new make', str(response.data))
     
-  
+    def test_create_cars(self):
+        response = self.client.post(url_for('create_car'),
+            data=dict(plate="created123", make="created make", member_id="new member"),
+            follow_redirects=True
+        )
+        self.assertIn('created123', str(response.data))
+        self.assertIn('created make', str(response.data))
+        self.assertIn('new member', str(response.data))
+
