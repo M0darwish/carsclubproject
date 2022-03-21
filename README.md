@@ -132,12 +132,15 @@ Junit and Cobertura Plugin have been used to make tests easier to read and navig
 Below are the testing results (Screenshots from Jenkins):
 
 ![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Cobertura_cov.png)
+ 
  The above shows Cobertura Coverage Report.
 
 ![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Final_test_report.png)
+
 The above shows the latest Tests Report.
 
 ![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Mid_test_report.png)
+
 The above shows an earlier Tests Report.
 
 ---
@@ -172,6 +175,8 @@ The below diagram illustrate the project CI/CD pipeline:
 
 
 A screenshot of a pipeline built that's triggered by GitHub Webhook:
+
+
 ![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/webhook.png)
 
 
