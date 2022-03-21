@@ -55,7 +55,7 @@ All user stories where added to a Kanban prject managment board using Trillo as 
 
 Git was used as my version control system and hosting my code repository using GitHub. Feature branch model was used to complete my work. Feature branchs was linked to User Story Cards on Trello.
 
-![alt text](README_IMAGES\Trello.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Trello.png)
 
 *screenshot of Trello board (after project completion)
 
@@ -66,19 +66,19 @@ For more details, Please refer to the project traking board: https://trello.com/
 
 Initial risk assessment was developed to list the possible threats and risks that might affect the project delivery during development stage and deployment stages. Initial Risk Assessment as follows:
 
-![alt text](README_IMAGES\Risk1.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Risk1.png)
 
 During the development of the project a new risk was introduced when I was not able to push the repository for some time. Which Later was confirmed to be an issue with GitHub platform. below is a screenshot of the Error.
 
 
-![alt text](README_IMAGES\GitHub_Error.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/GitHub_Error.png)
 
  This triggered the need of a reevaluation of the initial Risk Assessment.
 
 Reevaluated Risk Assessment as follows:
 
 
-![alt text](README_IMAGES\Risk2.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Risk2.png)
 
 ---
 # CarClub Application
@@ -111,7 +111,7 @@ Docker-Compose has been used to containtise the application. With the use of doc
 The app has been built to keep track of two entities (Members Table and Cars Table) with One-To-Many relationship where a member can have many cars enrolled. A user can add a member to the Members table and after that they can add a car to the Cars table, where they can select the name of the car owner from a drop-down menu.
 
 CarClub Entity Relationship Diagram (ERD) shown below:
-![alt text](README_IMAGES\carclup_erd.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/carclup_erd.png)
 
 
 ---
@@ -131,13 +131,13 @@ Junit and Cobertura Plugin have been used to make tests easier to read and navig
 
 Below are the testing results (Screenshots from Jenkins):
 
-![alt text](README_IMAGES\Cobertura_cov.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Cobertura_cov.png)
  The above shows Cobertura Coverage Report.
 
-![alt text](README_IMAGES\Final_test_report.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Final_test_report.png)
 The above shows the latest Tests Report.
 
-![alt text](README_IMAGES\Mid_test_report.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/Mid_test_report.png)
 The above shows an earlier Tests Report.
 
 ---
@@ -172,14 +172,14 @@ The below diagram illustrate the project CI/CD pipeline:
 
 
 A screenshot of a pipeline built that's triggered by GitHub Webhook:
-![alt text](README_IMAGES\webhook.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/dev/README_IMAGES/webhook.png)
 
 
 ---
 
 # Future developments:
  
-- Creating dedicated pipelines for different stages of deployment (e.g. feature branches run tests, but build artifacts are only produced on dev and main branches) running on more than two VMs.
+  Creating dedicated pipelines for different stages of deployment (e.g. feature branches run tests, but build artifacts are only produced on dev and main branches) running on more than two VMs.
 
 # Thanks note
 
