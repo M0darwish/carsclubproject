@@ -167,7 +167,7 @@ With the use of GitHub Web-hook, Every time a new code is committed and pushed t
 
 The below diagram illustrate the project CI/CD pipeline:
 
-![alt text](README_IMAGES\CarClub_CICD.png)
+![alt text](https://github.com/M0darwish/carsclubproject/blob/main/README_IMAGES/CarClub_CICD.png)
 
 
 
