@@ -187,6 +187,8 @@ A screenshot of a pipeline built that's triggered by GitHub Webhook:
   Creating dedicated pipelines for different stages of deployment (e.g. feature branches run tests, but build artifacts are only produced on dev and main branches) running on more than two VMs.
 
 # Thanks note
+I'd like to thank Leon Robinson, Adam Gray, Luke Benson and Harry Volker for all the support during the Bootcamp.
+
 
 
 
