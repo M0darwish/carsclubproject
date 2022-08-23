@@ -9,7 +9,7 @@
 - [CarClub App - QA 2022 DevOps BootCamp -Final Project](#carclub-app---qa-2022-devops-bootcamp--final-project)
 - [Table of content](#table-of-content)
 - [Introduction](#introduction)
-  - [Objectice](#objectice)
+  - [Objective](#objectice)
   - [The scenario:](#the-scenario)
 - [Project Management and Version Control](#project-management-and-version-control)
   - [Risks Assessment](#risks-assessment)
@@ -23,7 +23,7 @@
 ---
 
 # Introduction
-## Objectice
+## Objective
 The objective of this project is to achieve the following:
 
 - To create a web application (CarClub App) that integrates with a database and demonstrates CRUD functionality.
